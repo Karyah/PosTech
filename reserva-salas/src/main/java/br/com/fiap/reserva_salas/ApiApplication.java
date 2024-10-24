@@ -1,4 +1,4 @@
-package br.com.fiap.reserva_salas.reserva_salas;
+package br.com.fiap.reserva_salas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
