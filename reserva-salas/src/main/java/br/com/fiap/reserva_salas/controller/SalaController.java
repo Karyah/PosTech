@@ -3,11 +3,13 @@ package br.com.fiap.reserva_salas.controller;
 import br.com.fiap.reserva_salas.dto.SalaDTO;
 import br.com.fiap.reserva_salas.service.SalaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
 import java.util.UUID;
 
 @RestController
@@ -18,9 +20,9 @@ public class SalaController {
     private SalaService service;
 
     @GetMapping
-    public ResponseEntity<Collection<SalaDTO>> findAll(){
-        var salas = service.findAll();
-        return ResponseEntity.ok(salas);
+    public ResponseEntity<Page<SalaDTO>> findAll(@PageableDefault(size=5, page=0, sort="nome") Pageable pageable){
+        Page<SalaDTO> salasDTO = service.findAll(pageable);
+        return ResponseEntity.ok(salasDTO);
     }
 
     @GetMapping("/{id}")
