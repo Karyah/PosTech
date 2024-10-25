@@ -3,7 +3,6 @@ package br.com.fiap.reserva_salas.entity;
 import java.util.UUID;
 import jakarta.persistence.Entity;
 
-
 @Entity
 public class Usuario extends Pessoa{
 
