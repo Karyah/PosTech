@@ -11,11 +11,12 @@ public class Usuario extends Pessoa{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Usuario(UUID id, String nome, String cpf) {
+	public Usuario(UUID id, String nome, String cpf, String email) {
 		super();
 		setId(id);
 		setCpf(cpf);
-		this.nome = nome;
+		setNome(nome);
+		setEmail(email);
 	}
 
 	

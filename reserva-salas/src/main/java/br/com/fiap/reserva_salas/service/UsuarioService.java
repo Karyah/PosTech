@@ -21,13 +21,13 @@ public class UsuarioService {
 	}
 	
 	public UsuarioDTO save(UsuarioDTO usuarioDTO) {
-		Usuario usuario = new Usuario(usuarioDTO.id(), usuarioDTO.nome(), usuarioDTO.cpf());
+		Usuario usuario = new Usuario(usuarioDTO.id(), usuarioDTO.nome(), usuarioDTO.cpf(), usuarioDTO.email());
 		repository.save(usuario);
 		return toDTO(usuario);
 	}
 	
 	public UsuarioDTO toDTO(Usuario usuario) {
-		UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getId(),usuario.getNome(),usuario.getCpf()); 
+		UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getId(),usuario.getNome(),usuario.getCpf(), usuario.getEmail()); 
 		return usuarioDTO;
 	}
 	

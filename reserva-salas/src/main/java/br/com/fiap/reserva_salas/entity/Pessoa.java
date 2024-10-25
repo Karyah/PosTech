@@ -15,7 +15,8 @@ public class Pessoa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
 	private UUID id;
-	public String nome;
+	private String nome;
+	private String email;
 	private String cpf;
 
 	public Pessoa() {
@@ -23,11 +24,12 @@ public class Pessoa {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Pessoa(UUID id, String nome, String cpf) {
+	public Pessoa(UUID id, String nome, String cpf, String email) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
+		this.email = email;
 	}
 
 	public UUID getId() {
@@ -53,5 +55,15 @@ public class Pessoa {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
 
 }
