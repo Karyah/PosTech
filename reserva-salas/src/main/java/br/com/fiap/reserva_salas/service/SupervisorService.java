@@ -1,17 +1,13 @@
 package br.com.fiap.reserva_salas.service;
 
 import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
 import br.com.fiap.reserva_salas.controller.exception.ControllerNotFoundException;
 import br.com.fiap.reserva_salas.dto.SupervisorDTO;
-import br.com.fiap.reserva_salas.dto.UsuarioDTO;
 import br.com.fiap.reserva_salas.entity.Supervisor;
-import br.com.fiap.reserva_salas.entity.Usuario;
 import br.com.fiap.reserva_salas.repository.SupervisorRepository;
 import jakarta.persistence.EntityNotFoundException;
 
@@ -22,8 +18,8 @@ public class SupervisorService {
 	private SupervisorRepository repository;
 
 	public Page<SupervisorDTO> findAll(Pageable pageable) {
-		Page<Supervisor> supervisor = repository.findAll(pageable);
-		return supervisor.map(this::toDTO);
+		Page<Supervisor> supervisores = repository.findAll(pageable);
+		return supervisores.map(this::toDTO);
 	}
 
 	public SupervisorDTO save(SupervisorDTO supervisorDTO) {

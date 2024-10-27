@@ -7,31 +7,31 @@ import jakarta.persistence.Entity;
 @Entity 
 public class Administrador extends Pessoa{
 	
-	private String representanteEmpresa;
+	private String representanteDaEmpresa;
 	
 	public Administrador() {
 		super();
 	}
 	
 
-	public Administrador(UUID id, String nome, String cpf, String email, String telefone, String representanteEmpresa) {
+	public Administrador(UUID id, String nome, String cpf, String email, String telefone, String representanteDaEmpresa) {
 		super();
 		setId(id);
 		setCpf(cpf);
 		setNome(nome);
 		setEmail(email);
 		setTelefone(telefone);
-		setRepresentanteEmpresa(representanteEmpresa);
+		setRepresentanteDaEmpresa(representanteDaEmpresa);
 	}
 
 
-	public String getRepresentanteEmpresa() {
-		return representanteEmpresa;
+	public String getRepresentanteDaEmpresa() {
+		return representanteDaEmpresa;
 	}
 
 
-	public void setRepresentanteEmpresa(String representaEmpresa) {
-		this.representanteEmpresa = representaEmpresa;
+	public void setRepresentanteDaEmpresa(String representanteDaEmpresa) {
+		this.representanteDaEmpresa = representanteDaEmpresa;
 	}
 	
 	
