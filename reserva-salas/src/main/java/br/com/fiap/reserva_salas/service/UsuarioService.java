@@ -25,6 +25,11 @@ public class UsuarioService {
 		return usuarios.map(this::toDTO);
 	}
 	
+	public UsuarioDTO findById(UUID id) {
+		Usuario usuario = repository.findById(id).orElseThrow(()-> new ControllerNotFoundException("Usuário não encontrado"));
+		return toDTO(usuario);
+	}
+	
 	public UsuarioDTO save(UsuarioDTO usuarioDTO) {
 		Usuario usuario = toUsuario(usuarioDTO);
 		repository.save(usuario);

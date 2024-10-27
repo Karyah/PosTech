@@ -34,6 +34,12 @@ public class UsuarioController {
 		return ResponseEntity.ok(usuariosDTO);
 	}
 	
+	@GetMapping("/{id}")
+	public ResponseEntity<UsuarioDTO> findById(@PathVariable UUID id){
+		UsuarioDTO buscaUsuario = service.findById(id);
+		return ResponseEntity.ok(buscaUsuario);
+	}
+	
 	@PostMapping
 	public ResponseEntity<UsuarioDTO> save(@Valid @RequestBody UsuarioDTO usuarioDTO) {
 		UsuarioDTO usuarioSalvo = service.save(usuarioDTO);
