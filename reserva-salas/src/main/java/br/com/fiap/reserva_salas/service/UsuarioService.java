@@ -37,6 +37,7 @@ public class UsuarioService {
 			buscaUsuario.setNome(usuarioDTO.nome());
 			buscaUsuario.setCpf(usuarioDTO.cpf());
 			buscaUsuario.setEmail(usuarioDTO.email());
+			buscaUsuario.setTelefone(usuarioDTO.telefone());
 			buscaUsuario = repository.save(buscaUsuario);
 			return toDTO(buscaUsuario);
 		}catch(EntityNotFoundException e) {
@@ -50,12 +51,12 @@ public class UsuarioService {
 	}
 	
 	public UsuarioDTO toDTO(Usuario usuario) {
-		UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getId(),usuario.getNome(),usuario.getCpf(), usuario.getEmail()); 
+		UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getId(),usuario.getNome(),usuario.getCpf(), usuario.getEmail(), usuario.getTelefone()); 
 		return usuarioDTO;
 	}
 	
 	public Usuario toUsuario(UsuarioDTO usuarioDTO) {
-		Usuario usuario = new Usuario(usuarioDTO.id(), usuarioDTO.nome(), usuarioDTO.cpf(), usuarioDTO.email());
+		Usuario usuario = new Usuario(usuarioDTO.id(), usuarioDTO.nome(), usuarioDTO.cpf(), usuarioDTO.email(), usuarioDTO.telefone());
 		return usuario;
 	}
 	

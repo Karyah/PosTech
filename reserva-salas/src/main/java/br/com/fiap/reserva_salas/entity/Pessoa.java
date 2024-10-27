@@ -18,18 +18,28 @@ public class Pessoa {
 	private String nome;
 	private String email;
 	private String cpf;
+	private String telefone;
 
 	public Pessoa() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Pessoa(UUID id, String nome, String cpf, String email) {
+	public Pessoa(UUID id, String nome, String cpf, String email, String telefone) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
+		this.telefone = telefone;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 
 	public UUID getId() {

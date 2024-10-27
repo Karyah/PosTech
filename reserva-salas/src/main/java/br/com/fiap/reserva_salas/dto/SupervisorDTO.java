@@ -1,11 +1,13 @@
 package br.com.fiap.reserva_salas.dto;
 
 import java.util.UUID;
+
 import org.hibernate.validator.constraints.br.CPF;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
-public record UsuarioDTO(
+public record SupervisorDTO(
 		
 		UUID id,
 		@NotBlank(message = "Nome não pode estar em branco")
@@ -20,7 +22,14 @@ public record UsuarioDTO(
 		String email,
 		
 		@NotBlank
-		String telefone
+		String telefone,
+		
+		@NotBlank
+		String periodoTrabalho,
+		
+		String secaoDeTrabalho
+		
+		
 		) {
 
 }
