@@ -3,6 +3,7 @@ package br.com.fiap.reserva_salas.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -22,10 +23,10 @@ public class Reserva {
   private Sala sala;
 
   @Column(nullable = false)
-  private LocalDate horarioInicio;
+  private LocalDateTime horarioInicio;
 
   @Column(nullable = false)
-  private LocalDate horarioFim;
+  private LocalDateTime horarioFim;
 
   @Column(nullable = false)
   private double duracao;
@@ -37,7 +38,7 @@ public class Reserva {
   public Reserva() {
   }
 
-  public Reserva(Usuario usuario, Sala sala, LocalDate horarioInicio, LocalDate horarioFim, double duracao, int qtdParticipantes) {
+  public Reserva(Usuario usuario, Sala sala, LocalDateTime horarioInicio, LocalDateTime horarioFim, double duracao, int qtdParticipantes) {
     this.usuario = usuario;
     this.sala = sala;
     this.horarioInicio = horarioInicio;
@@ -70,19 +71,19 @@ public class Reserva {
     this.sala = sala;
   }
 
-  public LocalDate getHorarioInicio() {
+  public LocalDateTime getHorarioInicio() {
     return horarioInicio;
   }
 
-  public void setHorarioInicio(LocalDate horarioInicio) {
+  public void setHorarioInicio(LocalDateTime horarioInicio) {
     this.horarioInicio = horarioInicio;
   }
 
-  public LocalDate getHorarioFim() {
+  public LocalDateTime getHorarioFim() {
     return horarioFim;
   }
 
-  public void setHorarioFim(LocalDate horarioFim) {
+  public void setHorarioFim(LocalDateTime horarioFim) {
     this.horarioFim = horarioFim;
   }
 

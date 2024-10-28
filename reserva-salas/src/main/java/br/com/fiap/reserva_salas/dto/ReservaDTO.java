@@ -4,6 +4,7 @@ import br.com.fiap.reserva_salas.entity.Sala;
 import br.com.fiap.reserva_salas.entity.Usuario;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class ReservaDTO {
@@ -11,8 +12,8 @@ public class ReservaDTO {
   private UUID id;
   private Usuario usuario;
   private Sala sala;
-  private LocalDate horarioInicio;
-  private LocalDate horarioFim;
+  private LocalDateTime horarioInicio;
+  private LocalDateTime horarioFim;
   private double duracao;
   private int qtdParticipantes;
 
@@ -43,19 +44,19 @@ public class ReservaDTO {
     this.sala = sala;
   }
 
-  public LocalDate getHorarioInicio() {
+  public LocalDateTime getHorarioInicio() {
     return horarioInicio;
   }
 
-  public void setHorarioInicio(LocalDate horarioInicio) {
+  public void setHorarioInicio(LocalDateTime horarioInicio) {
     this.horarioInicio = horarioInicio;
   }
 
-  public LocalDate getHorarioFim() {
+  public LocalDateTime getHorarioFim() {
     return horarioFim;
   }
 
-  public void setHorarioFim(LocalDate horarioFim) {
+  public void setHorarioFim(LocalDateTime horarioFim) {
     this.horarioFim = horarioFim;
   }
 
