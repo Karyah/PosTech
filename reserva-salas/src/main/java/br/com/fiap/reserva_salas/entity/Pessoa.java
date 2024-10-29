@@ -2,22 +2,26 @@ package br.com.fiap.reserva_salas.entity;
 
 import java.util.UUID;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
+import jakarta.persistence.*;
 
-@Inheritance
+@Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 public class Pessoa {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
 	private UUID id;
+
+	@Column(name = "nome")
 	private String nome;
+
+	@Column(name = "email")
 	private String email;
+
+	@Column(name = "cpf")
 	private String cpf;
+
+	@Column(name = "telefone")
 	private String telefone;
 
 	public Pessoa() {

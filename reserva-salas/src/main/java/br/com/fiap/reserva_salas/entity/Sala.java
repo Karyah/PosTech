@@ -14,6 +14,7 @@ public class Sala {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String nome;
+    @Enumerated(EnumType.STRING)
     private TipoSala tipoSala;
     private Integer capacidade;
     private Boolean disponibilidade;

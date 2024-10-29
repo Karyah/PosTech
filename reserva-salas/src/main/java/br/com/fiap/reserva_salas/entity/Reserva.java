@@ -2,12 +2,10 @@ package br.com.fiap.reserva_salas.entity;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "tb_reserva")
 public class Reserva {
 
   @Id

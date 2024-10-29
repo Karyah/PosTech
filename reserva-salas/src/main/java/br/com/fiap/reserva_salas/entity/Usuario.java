@@ -1,10 +1,27 @@
 package br.com.fiap.reserva_salas.entity;
 
 import java.util.UUID;
-import jakarta.persistence.Entity;
+
+import jakarta.persistence.*;
 
 @Entity
-public class Usuario extends Pessoa{
+public class Usuario {
+
+@Id
+@GeneratedValue(strategy = GenerationType.UUID)
+private UUID id;
+
+	@Column(name = "nome")
+	private String nome;
+
+	@Column(name = "email")
+	private String email;
+
+	@Column(name = "cpf")
+	private String cpf;
+
+	@Column(name = "telefone")
+	private String telefone;
 
 	public Usuario() {
 		super();
@@ -13,12 +30,50 @@ public class Usuario extends Pessoa{
 
 	public Usuario(UUID id, String nome, String cpf, String email, String telefone) {
 		super();
-		setId(id);
-		setCpf(cpf);
-		setNome(nome);
-		setEmail(email);
-		setTelefone(telefone);
+		this.id = id;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.email = email;
+		this.telefone = telefone;
 	}
 
-	
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 }

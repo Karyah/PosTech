@@ -1,17 +1,13 @@
 package br.com.fiap.reserva_salas.dto;
 
-import br.com.fiap.reserva_salas.entity.Sala;
-import br.com.fiap.reserva_salas.entity.Usuario;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class ReservaDTO {
 
   private UUID id;
-  private Usuario usuario;
-  private Sala sala;
+  private UsuarioDTO usuario;
+  private SalaDTO sala;
   private LocalDateTime horarioInicio;
   private LocalDateTime horarioFim;
   private double duracao;
@@ -28,19 +24,19 @@ public class ReservaDTO {
     this.id = id;
   }
 
-  public Usuario getUsuario() {
+  public UsuarioDTO getUsuario() {
     return usuario;
   }
 
-  public void setUsuario(Usuario usuario) {
+  public void setUsuario(UsuarioDTO usuario) {
     this.usuario = usuario;
   }
 
-  public Sala getSala() {
+  public SalaDTO getSala() {
     return sala;
   }
 
-  public void setSala(Sala sala) {
+  public void setSala(SalaDTO sala) {
     this.sala = sala;
   }
 
