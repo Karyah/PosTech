@@ -59,7 +59,7 @@ public class SalaService {
         repo.deleteById(id);
     }
 
-    private SalaDTO toSalaDTO(Sala sala){
+    public SalaDTO toSalaDTO(Sala sala){
         return new SalaDTO(
                 sala.getId(),
                 sala.getNome(),
@@ -68,7 +68,7 @@ public class SalaService {
                 sala.getDisponibilidade());
     }
 
-    private Sala toSala(SalaDTO salaDTO){
+    public Sala toSala(SalaDTO salaDTO){
         return new Sala(
                 salaDTO.id(),
                 salaDTO.nome(),

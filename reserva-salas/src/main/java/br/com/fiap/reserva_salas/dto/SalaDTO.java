@@ -17,11 +17,11 @@ public record SalaDTO(
 
         Boolean disponibilidade
 ) {
-    public SalaDTO(UUID id, String nome, TipoSala tipoSala, Integer capacidade, Boolean disponibilidade) {
-        this.id = id;
-        this.nome = nome;
-        this.tipoSala = (tipoSala != null) ? tipoSala : TipoSala.SALA_DE_REUNIÃO;
-        this.capacidade = capacidade;
-        this.disponibilidade = (disponibilidade != null) ? disponibilidade : Boolean.TRUE;
-    }
+  public SalaDTO(UUID id, String nome, TipoSala tipoSala, Integer capacidade, Boolean disponibilidade) {
+    this.id = id;
+    this.nome = nome;
+    this.tipoSala = (tipoSala != null) ? tipoSala : TipoSala.SALA_DE_REUNIAO;
+    this.capacidade = capacidade;
+    this.disponibilidade = (disponibilidade != null) ? disponibilidade : Boolean.TRUE;
+  }
 }
