@@ -6,8 +6,8 @@ Esse projeto é um sistema de reserva de salas desenvolvido em Java com Spring B
 
 - **CRUD de Usuários**: Permite adicionar, visualizar, atualizar e excluir usuários.
 - **CRUD de Salas**: Permite gerenciar salas com informações específicas.
-- **Sistema de Reservas**: Realize reservas entre usuários e salas com facilidade.
-- **População Automática**: Um arquivo SQL carrega automaticamente dados iniciais para testes.
+- **CRUD de Reservas**: Realize reservas entre usuários e salas com facilidade.
+- **População Automática**: Um arquivo SQL carrega automaticamente dados iniciais no H2 para testes.
 - **Exemplo de Requisições**: Coleção do Postman com exemplos prontos para facilitar os testes.
 
 ## 🛠️ Tecnologias
@@ -68,26 +68,26 @@ Use a coleção do Postman para facilitar os testes:
 🔗 **[Acessar Coleção no Postman](https://api.postman.com/collections/15767856-87ba9f19-c3c1-4beb-b033-acd2913740b9?access_key=PMAT-01JBAWM1BXDBPVM33Q33YEVJAA)**
 
 
-**Usuário**
+### Usuário
 
-``GET /usuarios`` - Lista todos os usuários.
-``POST /usuarios`` - Cria um novo usuário.
-``GET /usuarios/{id}`` - Lista um usuário pelo ID.
-``PUT /usuarios/{id}`` - Atualiza um usuário.
-``DELETE /usuarios/{id}`` - Remove um usuário.
+1. `GET /usuarios` - Lista todos os usuários.
+2. `POST /usuarios` - Cria um novo usuário.
+3. `GET /usuarios/{id}` - Lista um usuário pelo ID.
+4. `PUT /usuarios/{id}` - Atualiza um usuário.
+5. `DELETE /usuarios/{id}` - Remove um usuário.
 
-**Sala**
+### Sala
 
-``GET /sala ``- Lista todas as salas.
-``POST /sala`` - Cria uma nova sala.
-``GET /sala/{id}`` - Lista uma sala pelo ID.
-``PUT /sala/{id}`` - Atualiza uma sala.
-``DELETE /sala/{id}`` - Remove uma sala.
+1. `GET /sala` - Lista todas as salas.
+2. `POST /sala` - Cria uma nova sala.
+3. `GET /sala/{id}` - Lista uma sala pelo ID.
+4. `PUT /sala/{id}` - Atualiza uma sala.
+5. `DELETE /sala/{id}` - Remove uma sala.
 
-**Reserva**
+### Reserva
 
-``GET /reservas`` - Lista todas as reservas.
-``POST /reservas`` - Realiza uma nova reserva.
-``GET /reservas{id}`` - Lista uma reserva pelo ID.
-``PUT /reservas/{id}`` - Atualiza uma reserva.
-``DELETE /reservas/{id}`` - Cancela uma reserva.
+1. `GET /reservas` - Lista todas as reservas.
+2. `POST /reservas` - Realiza uma nova reserva.
+3. `GET /reservas/{id}` - Lista uma reserva pelo ID.
+4. `PUT /reservas/{id}` - Atualiza uma reserva.
+5. `DELETE /reservas/{id}` - Cancela uma reserva.
