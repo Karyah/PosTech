@@ -1,0 +1,93 @@
+# Sistema de Reserva de Salas
+
+Esse projeto é um sistema de reserva de salas desenvolvido em Java com Spring Boot. Ele permite gerenciar usuários, salas e realizar reservas, com uma interface que facilita o teste e a inicialização de dados.
+
+## 🚀 Funcionalidades
+
+- **CRUD de Usuários**: Permite adicionar, visualizar, atualizar e excluir usuários.
+- **CRUD de Salas**: Permite gerenciar salas com informações específicas.
+- **Sistema de Reservas**: Realize reservas entre usuários e salas com facilidade.
+- **População Automática**: Um arquivo SQL carrega automaticamente dados iniciais para testes.
+- **Exemplo de Requisições**: Coleção do Postman com exemplos prontos para facilitar os testes.
+
+## 🛠️ Tecnologias
+
+- **Java** - Linguagem principal.
+- **Spring Boot** - Framework de desenvolvimento.
+- **H2 Database** - Banco de dados em memória para testes rápidos.
+- **Postman** - Ferramenta para testes de API (coleção disponível).
+
+## 📦 Estrutura do Projeto
+PosTech  
+├── src  
+│   ├── main  
+│   │   ├── java  
+│   │   │   └── br.com.fiap.reserva_salas  
+│   │   │       ├── dto  
+│   │   │       ├── entity  
+│   │   │       ├── service  
+│   │   │       └── controller  
+│   │   │           └── exception  
+│   │   └── resources  
+│   │       ├── application.properties  
+│   │       └── data.sql  
+└── README.md  
+
+- **`dto`**: Contém as classes de Data Transfer Objects.
+- **`entity`**: Contém as entidades mapeadas para o banco de dados.
+- **`service`**: Lógica de negócio.
+- **`controller`**: Controladores REST.
+- **`resources`**: Configurações e arquivos de dados iniciais.
+
+## 📝 Pré-requisitos
+
+- **Java 17** ou superior
+- **Maven**
+
+## ⚙️ Configuração e Execução
+
+1. **Clone o Repositório**
+
+   ```bash
+   git clone https://github.com/Karyah/PosTech.git
+   cd PosTech
+
+2. **Configure o Banco de Dados**
+
+O projeto está configurado para usar um banco de dados H2. Na inicialização, ele carrega dados a partir do arquivo data.sql.
+
+3. **Compile e Execute**
+   
+   ```bash
+   mvn spring-boot:run
+
+4. **Testando com Postman**
+
+Use a coleção do Postman para facilitar os testes:
+
+🔗 **[Acessar Coleção no Postman](https://api.postman.com/collections/15767856-87ba9f19-c3c1-4beb-b033-acd2913740b9?access_key=PMAT-01JBAWM1BXDBPVM33Q33YEVJAA)**
+
+
+**Usuário**
+
+``GET /usuarios`` - Lista todos os usuários.
+``POST /usuarios`` - Cria um novo usuário.
+``GET /usuarios/{id}`` - Lista um usuário pelo ID.
+``PUT /usuarios/{id}`` - Atualiza um usuário.
+``DELETE /usuarios/{id}`` - Remove um usuário.
+
+**Sala**
+
+``GET /sala ``- Lista todas as salas.
+``POST /sala`` - Cria uma nova sala.
+``GET /sala/{id}`` - Lista uma sala pelo ID.
+``PUT /sala/{id}`` - Atualiza uma sala.
+``DELETE /sala/{id}`` - Remove uma sala.
+
+**Reserva**
+
+``GET /reservas`` - Lista todas as reservas.
+``POST /reservas`` - Realiza uma nova reserva.
+``GET /reservas{id}`` - Lista uma reserva pelo ID.
+``PUT /reservas/{id}`` - Atualiza uma reserva.
+``DELETE /reservas/{id}`` - Cancela uma reserva.
