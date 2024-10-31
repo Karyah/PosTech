@@ -98,7 +98,7 @@ public class ReservaService {
     reservaRepository.deleteById(id);
   }
 
-  private ReservaDTO convertToDTO(Reserva reserva) {
+  public ReservaDTO convertToDTO(Reserva reserva) {
     ReservaDTO reservaDTO = new ReservaDTO();
     reservaDTO.setId(reserva.getId());
     reservaDTO.setUsuario(usuarioService.toDTO(reserva.getUsuario()));

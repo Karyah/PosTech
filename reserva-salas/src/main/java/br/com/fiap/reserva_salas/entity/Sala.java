@@ -1,5 +1,6 @@
 package br.com.fiap.reserva_salas.entity;
 
+import br.com.fiap.reserva_salas.dto.SalaDTO;
 import br.com.fiap.reserva_salas.dto.TipoSala;
 import jakarta.persistence.*;
 

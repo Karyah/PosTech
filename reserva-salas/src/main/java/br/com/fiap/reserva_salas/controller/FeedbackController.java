@@ -22,6 +22,7 @@ public class FeedbackController {
         FeedbackDTO createdFeedback = feedbackService.createFeedback(feedbackDTO);
         return ResponseEntity.ok(createdFeedback);
     }
+    /*
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteFeedback(@PathVariable UUID id) {
@@ -40,4 +41,5 @@ public class FeedbackController {
         List<FeedbackDTO> feedbacks = feedbackService.getFeedbacksByReservationId(reservaId);
         return ResponseEntity.ok(feedbacks);
     }
+    */
 }

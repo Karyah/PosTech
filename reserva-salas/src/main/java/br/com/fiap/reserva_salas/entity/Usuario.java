@@ -2,14 +2,15 @@ package br.com.fiap.reserva_salas.entity;
 
 import java.util.UUID;
 
+import br.com.fiap.reserva_salas.dto.UsuarioDTO;
 import jakarta.persistence.*;
 
 @Entity
 public class Usuario {
 
-@Id
-@GeneratedValue(strategy = GenerationType.UUID)
-private UUID id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.UUID)
+	private UUID id;
 
 	@Column(name = "nome")
 	private String nome;

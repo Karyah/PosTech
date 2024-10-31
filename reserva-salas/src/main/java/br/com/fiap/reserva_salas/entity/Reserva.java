@@ -5,11 +5,13 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.fiap.reserva_salas.dto.ReservaDTO;
+
 @Entity
 public class Reserva {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
 
   @ManyToOne(optional = false)

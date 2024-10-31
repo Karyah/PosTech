@@ -9,8 +9,8 @@ import java.util.UUID;
 public class Feedback {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID feedbackID;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)
@@ -26,8 +26,8 @@ public class Feedback {
 
     public Feedback() {}
 
-    public Feedback(UUID feedbackID, Usuario usuario, String mensagem, Reserva reserva) {
-        this.feedbackID = feedbackID;
+    public Feedback(UUID id, Usuario usuario, String mensagem, Reserva reserva) {
+        this.id = id;
         this.usuario = usuario;
         this.mensagem = mensagem;
         this.reserva = reserva;
@@ -35,11 +35,11 @@ public class Feedback {
 
 
     public UUID getFeedbackID() {
-        return feedbackID;
+        return id;
     }
 
     public void setFeedbackID(UUID feedbackID) {
-        this.feedbackID = feedbackID;
+        this.id = feedbackID;
     }
 
     public Usuario getUsuario() {
