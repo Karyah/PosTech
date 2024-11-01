@@ -52,3 +52,8 @@ INSERT INTO sala (id, nome, tipo_sala, capacidade, disponibilidade) VALUES
 INSERT INTO reserva (id, usuario_id, sala_id, horario_inicio, horario_fim, duracao, qtd_participantes) VALUES
 ('2f71d7da-b0e8-48f3-859b-b09e1b597627', 'e2f4c27f-9a3b-4aef-83b3-bc2e12aa0b2b', '9782735c-77b2-4e75-8261-8f97e3b0a0b8', '2024-10-30T10:00:00', '2024-10-30T12:00:00', 2.0, 10),
 ('b7c0ec47-e05b-4aa3-b47b-fb7c6875777d', '1b1a3b46-7b12-4f8d-b5cf-fb916ea74a62', 'ac653b3e-b128-466e-86c5-0349f421c2f3', '2024-10-30T14:00:00', '2024-10-30T16:00:00', 2.0, 15);
+
+-- Inserindo feedbacks
+INSERT INTO feedback (id, reserva_id, usuario_id, mensagem) VALUES
+('e3fbfce2-d279-46de-b3b2-1a25296103c7', 'b7c0ec47-e05b-4aa3-b47b-fb7c6875777d', '1b1a3b46-7b12-4f8d-b5cf-fb916ea74a62', 'A sala organizada após o uso'),
+('faec5f3c-b4a6-4b70-af2e-e53dfbefb26b', '2f71d7da-b0e8-48f3-859b-b09e1b597627', 'e2f4c27f-9a3b-4aef-83b3-bc2e12aa0b2b', 'Estava faltando equipamentos na sala');

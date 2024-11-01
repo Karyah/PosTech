@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class FeedbackService {
@@ -41,6 +42,7 @@ public class FeedbackService {
         Optional<Usuario> usuarioOptional =  usuarioRepository.findById(feedbackDTO.usuario().id());
         Optional<Reserva> reservaOptional = reservaRepository.findById(feedbackDTO.reserva().getId());
 
+
         
     	Feedback feedback = new Feedback();
     	feedback.setFeedbackID(feedback.getFeedbackID());
@@ -54,28 +56,43 @@ public class FeedbackService {
         return toDTO(feedback);
     }
     
-    /*
+
     public void deleteFeedback(UUID feedbackId) {
         feedbackRepository.deleteById(feedbackId);
     }
 
-    public FeedbackDTO getFeedbackById(UUID feedbackId) {
-        Feedback feedback = feedbackRepository.findById(feedbackId)
-                .orElseThrow(() -> new RuntimeException("Feedback não encontrado"));
-        return new FeedbackDTO(feedback.getFeedbackID(), feedback.getReserva(), feedback.getMensagem(), feedback.getUsuario());
+    public FeedbackDTO getFeedbackById(UUID feedbackID) {
+        Optional<Feedback> feedbackOptional = feedbackRepository.findById(feedbackID);
+        if (feedbackOptional.isPresent()) {
+            return toDTO(feedbackOptional.get());
+        } else {
+            throw new IllegalArgumentException("Feedback não encontrado com ID: " + feedbackID);
+        }
     }
 
-    public List<FeedbackDTO> getFeedbacksByReservationId(UUID reservaId) {
+    public List<FeedbackDTO> getFeedbacksByReservaId(UUID reservaId) {
         List<Feedback> feedbacks = feedbackRepository.findByReservaId(reservaId);
-        return feedbacks.stream()
-                .map(feedback -> new FeedbackDTO(feedback.getFeedbackID(), feedback.getReserva(), feedback.getMensagem(), feedback.getUsuario()))
-                .collect(Collectors.toList());
-    }*/
+        return feedbacks.stream().map(this::toDTO).collect(Collectors.toList());
+    }
+
+    public FeedbackDTO updateFeedback(UUID id, FeedbackDTO feedbackDTO) {
+        Optional<Feedback> existingFeedback = feedbackRepository.findById(id);
+        if (existingFeedback.isPresent()) {
+            Feedback feedback = existingFeedback.get();
+            feedback.setMensagem(feedbackDTO.mensagem());
+            feedback.setUsuario(usuarioRepository.findById(feedbackDTO.usuario().id()).orElse(null));
+            feedback.setReserva(reservaRepository.findById(feedbackDTO.reserva().getId()).orElse(null));
+            feedback = feedbackRepository.save(feedback);
+            return toDTO(feedback);
+        }
+        return null;
+    }
 
     private FeedbackDTO toDTO(Feedback feedback) {
     	
     	FeedbackDTO feedbackDTO = new FeedbackDTO(feedback.getFeedbackID(), reservaService.convertToDTO(feedback.getReserva()), usuarioService.toDTO(feedback.getUsuario()), feedback.getMensagem());
     	return feedbackDTO;
     }
+
 
 }
