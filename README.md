@@ -7,6 +7,7 @@ Esse projeto é um sistema de reserva de salas desenvolvido em Java com Spring B
 - **CRUD de Usuários**: Permite adicionar, visualizar, atualizar e excluir usuários.
 - **CRUD de Salas**: Permite gerenciar salas com informações específicas.
 - **CRUD de Reservas**: Realize reservas entre usuários e salas com facilidade.
+- **CRUD de Feedback**: Os usuários podem enviar feedbacks sobre suas reservas, ajudando na avaliação de melhorias.
 - **População Automática**: Um arquivo SQL carrega automaticamente dados iniciais no H2 para testes.
 - **Exemplo de Requisições**: Coleção do Postman com exemplos prontos para facilitar os testes.
 
@@ -91,3 +92,10 @@ Use a coleção do Postman para facilitar os testes:
 3. `GET /reservas/{id}` - Lista uma reserva pelo ID.
 4. `PUT /reservas/{id}` - Atualiza uma reserva.
 5. `DELETE /reservas/{id}` - Cancela uma reserva.
+
+### Feedback
+POST /feedbacks - Cria um novo feedback para uma reserva.
+GET /feedbacks/{id} - Obtém um feedback específico pelo ID.
+GET /feedbacks/reserva/{reservaId} - Lista todos os feedbacks relacionados a uma reserva específica.
+PUT /feedbacks/{id} - Atualiza um feedback existente.
+DELETE /feedbacks/{id} - Exclui um feedback.
