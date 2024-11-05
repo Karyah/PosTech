@@ -25,6 +25,8 @@ import jakarta.validation.Valid;
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
+	/*Usuários devem ser capazes de se cadastrar no sistema e deletar e/ou atualizar seus cadastros*/
+	
 	@Autowired
 	private UsuarioService service;
 	

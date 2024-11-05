@@ -16,6 +16,8 @@ import java.util.UUID;
 @RequestMapping("/sala")
 public class SalaController {
 
+	/*Todos os tipos de usuário podem acessar os métodos findAll e findById*/
+	
     @Autowired
     private SalaService service;
 
@@ -31,18 +33,21 @@ public class SalaController {
         return ResponseEntity.ok(sala);
     }
 
+    /*Apenas o administrador pode criar uma sala.*/
     @PostMapping
     public ResponseEntity<SalaDTO> save(@RequestBody SalaDTO salaDTO){
         salaDTO = service.save(salaDTO);
         return ResponseEntity.status(HttpStatusCode.valueOf(201)).body(salaDTO);
     }
 
+    /*Apenas o administrador pode atualizar informações de uma sala.*/
     @PutMapping("/{id}")
     public ResponseEntity<SalaDTO> update(@PathVariable UUID id, @RequestBody SalaDTO salaDTO){
         salaDTO = service.update(id, salaDTO);
         return ResponseEntity.ok(salaDTO);
     }
-
+    
+    /*Apenas o administrador pode deletar o registro de uma sala.*/
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable UUID id){
         service.delete(id);

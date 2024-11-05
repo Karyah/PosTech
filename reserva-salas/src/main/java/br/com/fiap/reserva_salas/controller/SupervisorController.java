@@ -25,6 +25,9 @@ import jakarta.validation.Valid;
 @RequestMapping("/supervisores")
 public class SupervisorController {
 	
+	/*Apenas o administrador tem permissão de acessar o endpoint de supervisores. Apenas o administrador pode criar, deletar, 
+	 * atualizar ou buscar por um supervisor*/
+	
 	@Autowired
 	private SupervisorService service;
 	

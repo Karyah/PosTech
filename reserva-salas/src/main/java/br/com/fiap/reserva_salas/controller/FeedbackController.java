@@ -14,6 +14,9 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/feedbacks")
 public class FeedbackController {
+	
+	/*Usuários devem ser capazes de criar feedbacks.
+	 * Administradores e supervisores devem ser capazes de ver todos os feedbacks.*/
 
     @Autowired
     private FeedbackService feedbackService;

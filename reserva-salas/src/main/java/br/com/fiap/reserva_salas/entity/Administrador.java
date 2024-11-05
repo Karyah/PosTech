@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 @Entity 
 public class Administrador extends Pessoa{
 	
+	/*Administradores devem ser adicionados manualmente por alguém da nossa empresa de reserva de salas.*/
+	
 	private String representanteDaEmpresa;
 	
 	public Administrador() {
