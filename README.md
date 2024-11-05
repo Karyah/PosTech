@@ -94,8 +94,8 @@ Use a coleção do Postman para facilitar os testes:
 5. `DELETE /reservas/{id}` - Cancela uma reserva.
 
 ### Feedback
-POST /feedbacks - Cria um novo feedback para uma reserva.
-GET /feedbacks/{id} - Obtém um feedback específico pelo ID.
-GET /feedbacks/reserva/{reservaId} - Lista todos os feedbacks relacionados a uma reserva específica.
-PUT /feedbacks/{id} - Atualiza um feedback existente.
-DELETE /feedbacks/{id} - Exclui um feedback.
+1. `POST /feedbacks` - Cria um novo feedback para uma reserva.
+2. `GET /feedbacks/{id}` - Obtém um feedback específico pelo ID.
+3. `GET /feedbacks/reserva/{reservaId}` - Lista todos os feedbacks relacionados a uma reserva específica.
+4. `PUT /feedbacks/{id}` - Atualiza um feedback existente.
+5. `DELETE /feedbacks/{id}` - Exclui um feedback.
